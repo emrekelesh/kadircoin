@@ -15,7 +15,7 @@ const Home = () => {
     if(!currentData){
       axios.get('/api/coin').then((res)=>{
         // const values = res.data.tableData
-        const values = res.data
+        const values = res.data.crossDownPrice1
         setTimeData(values)
       })
     }
@@ -80,18 +80,17 @@ const priceIndex = (indexCr) =>{
 
   return(
       <div>
-        {/*<div>*/}
-        {/*  <LineChart data={currentData} width={730} height={250} margin={{ top: 5, right: 20, bottom: 5 , left: 0 }}>*/}
-        {/*    <XAxis dataKey="time" angle="90" textAnchor="true" domain={['auto', 'auto']}/>*/}
-        {/*    <YAxis/>*/}
-        {/*    <Tooltip/>*/}
-        {/*    <CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>*/}
-        {/*    <Line type="monotone"  dataKey="price" stroke="red" />*/}
-        {/*    <Line type="monotone" dataKey="ema5"   stroke="#82ca9d"/>*/}
-        {/*    <Line type="monotone" dataKey="ema10" stroke="#8884d8"/>*/}
-        {/*  </LineChart>*/}
-        {/*</div>*/}
-Hop
+        <div>
+          <LineChart data={currentData} width={730} height={250} margin={{ top: 5, right: 20, bottom: 5 , left: 0 }}>
+            <XAxis dataKey="backtrack" angle="90" textAnchor="true" domain={['auto', 'auto']}/>
+            <YAxis/>
+            <Tooltip/>
+            <CartesianGrid stroke="#ccc" />
+            <Line type="monotone"  dataKey="value" stroke="red" />
+            {/*<Line type="monotone" dataKey="ema5"   stroke="#82ca9d"/>*/}
+            {/*<Line type="monotone" dataKey="ema10" stroke="#8884d8"/>*/}
+          </LineChart>
+        </div>
       </div>
     )
 }

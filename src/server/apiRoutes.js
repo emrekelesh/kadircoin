@@ -1,5 +1,5 @@
 const app = require('express')()
-const getJobRoutes = require('./jobs/bianceJobs')
+const getJobRoutes = require('./jobs/taapiJobs')
 
 app.use('/coin', getJobRoutes)
 
